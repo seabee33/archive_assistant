@@ -1,4 +1,5 @@
-- basic command line proof of concept
+- basic command line proof of concept (done)
+- check file permissions and account for read errors
 - GUI
 - export hashed files list
 - import hashed files list to compare to new scan
