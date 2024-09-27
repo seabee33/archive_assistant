@@ -1,0 +1,6 @@
+- basic command line proof of concept
+- GUI
+- export hashed files list
+- import hashed files list to compare to new scan
+- history of directories scanned
+- compare 2 directories
