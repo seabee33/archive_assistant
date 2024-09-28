@@ -1,7 +1,7 @@
 - basic command line proof of concept (done)
 - check file permissions and account for read errors
 - GUI
-- export hashed files list
-- import hashed files list to compare to new scan
+- export hashed files list (done)
+- import hashed files list to compare to new scan (done)
 - history of directories scanned
-- compare 2 directories
+- compare 2 directories (done)
