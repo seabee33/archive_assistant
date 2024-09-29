@@ -1,5 +1,6 @@
 import os, glob, hashlib, json
 from dotenv import load_dotenv
+from tqdm import tqdm
 load_dotenv()
 
 path_to_scan = os.getenv("DIRECTORY")
@@ -33,7 +34,7 @@ def get_files_list(path_to_scan, custom_folder_name):
 	# Make a list of only the files
 	files_and_hashes = {
 		item: get_file_hash(item)
-		for item in files_object if os.path.isfile(item)
+		for item in tqdm(files_object, desc="Scanning files", unit="file") if os.path.isfile(item)
 	}
 
 	return files_and_hashes
@@ -58,7 +59,7 @@ def compare_scans(previous_scan, current_scan):
 
 def main():
 	scanfile_status = check_if_scanfile_exists(scanfile_path)
-	current_scan = get_files_list(path_to_scan, "test_folder")
+	current_scan = get_files_list(path_to_scan, "archive")
 
 	if scanfile_status == 1:
 		with open(scanfile_path, "r") as f:
